@@ -2,6 +2,7 @@ package com.example.multiply_table2
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,10 +15,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        //Created variables to hold UI elements
         val multiplyBtn = findViewById<Button>(R.id.multiplyBtn)
+        val numTxtInput = findViewById<EditText>(R.id.numTxtInput)
+
+        //Created a set click listener input
         multiplyBtn.setOnClickListener {
             //create the explicit intent
-            val intent = Intent(this, MultiplicationTable ::class.java )
+            val intent = Intent(this, MultiplicationTable::class.java )
             // start the activity
             startActivity(intent)
         }
