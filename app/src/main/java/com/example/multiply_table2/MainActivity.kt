@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         multiplyBtn.setOnClickListener {
             //create the explicit intent
             val intent = Intent(this, MultiplicationTable::class.java )
+            intent.putExtra("tableNumber", numTxtInput.text.toString())
             // start the activity
             startActivity(intent)
         }
