@@ -18,8 +18,12 @@ class TableDisplay : AppCompatActivity() {
         //getting the number entered
         val tableString: String? = bundle?.getString("tableNumber")
         //converting the string back
-        val tableNumber = tableString.toInt()
+        val tableNumber = tableString!!.toInt()
         val multiplyTable = findViewById<TextView>(R.id.tableDisplayTxt)
+        val timesDisplay: String = "$tableNumber x tables\n\n"
+
+        //
+        multiplyTable.text = timesDisplay
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
