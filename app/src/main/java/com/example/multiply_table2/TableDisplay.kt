@@ -20,10 +20,39 @@ class TableDisplay : AppCompatActivity() {
         //converting the string back
         val tableNumber = tableString!!.toInt()
         val multiplyTable = findViewById<TextView>(R.id.tableDisplayTxt)
-        val timesDisplay: String = "$tableNumber x tables\n\n"
+        var timesDisplay: String = "$tableNumber x tables\n\n"
+
+
+        //creating count for while loop
+        var count = 1
+
 
         //
         multiplyTable.text = timesDisplay
+
+        while (count <=10){
+
+
+
+
+            //Addding a continue
+            if (count ==4){
+                count++
+                continue
+            }
+            //example user enters 5 and count is 50: 5 x 1 = 5 (answer)
+            val answer = tableNumber * count
+            /*displays as:
+             5 x tables
+
+             */
+
+
+
+
+            timesDisplay += "$tableNumber x $count = ${answer}\n"
+
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
